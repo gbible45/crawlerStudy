@@ -226,7 +226,7 @@ chrome.execute_script('window.open("https://naver.com");')
 ## google colab 사용시
 - google colab : https://colab.research.google.com/notebooks/intro.ipynb
 
-## jupyter notebook 사용시
+## jupyter lab 사용시
 - 아나콘다 설치 방법 : https://annajang.tistory.com/26
 
 
