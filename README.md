@@ -30,7 +30,7 @@ title = soup.find('title')
 print(title.get_text())
 ```
 
-### 5) 태그로 검색 방법
+### 4) 태그로 검색 방법
 ```python
 html = """
 <html>
