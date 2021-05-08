@@ -43,9 +43,14 @@ print(title.get_text())
 html = """
 <html>
     <body>
-        <h1 id='title'>[1]크롤링이란?</h1>;
-        <p class='cssstyle'>웹페이지에서 필요한 데이터를 추출하는 것</p>
-        <p id='body' align='center'>파이썬을 중심으로 다양한 웹크롤링 기술 발달</p>
+        <h1 id='title'>타이틀 문구</h1>;
+        <p class='cssstyle'>웹페이지에서 필요한 데이터를 추출 내용</p>
+        <p id='body' align='center'>
+           여러줄 데이터내용
+           여러줄 데이터내용
+           여러줄 데이터내용
+           여러줄 데이터내용
+        </p>
     </body>
 </html>
 """
@@ -142,9 +147,6 @@ chrome.find_element_by_partial_link_text('가입')  #링크가 달려 있는 엘
 chrome.find_element_by_tag_name('input')    #태그 이름으로 접근
 
 chrome.find_element_by_tag_name('input').find_element_by_tag_name('a')  #input 태그 하위태그인 a 태그에 접근
-
-#xpath 로 접근한 엘레먼트의 안에 join 이라는 속성을 가진 tag 엘레먼트에 접근
-chrome.find_element_by_xpath('/html/body/div[2]/div[2]/div[1]/div/div[3]/form/fieldset/button/span[2]').find_element_by_name('join')
 
 # 단일
 driver.driver.find_element_by_~~~~~~~~
