@@ -86,7 +86,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('start-maximized')
 ```
 
-#### 1-2) google.colab 사용시
+#### 1-2) google colab 사용시
 ```python
 import sys
 
@@ -113,8 +113,8 @@ options.add_argument('--disable-dev-shm-usage')
 ```python
 # 주피터 노트북 OR 주피터 랩 사용시
 chrome = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-# 주피터 노트북 OR 주피터 랩 사용시
-chrome = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+# google colab 사용시
+chrome = webdriver.Chrome('chromedriver', options=options)
 ```
 
 #### 2-2) 브라우저 닫기
