@@ -151,9 +151,9 @@ chrome.find_element_by_tag_name('input')    #태그 이름으로 접근
 chrome.find_element_by_tag_name('input').find_element_by_tag_name('a')  #input 태그 하위태그인 a 태그에 접근
 
 # 단일
-chrome.driver.find_element_by_~~~~~~~~
+chrome.find_element_by_~~~~~~~~
 # 복수
-chrome.driver.find_elements_~~~~~~~
+chrome.find_elements_~~~~~~~
 ```
 
 #### 3-2) 엘레먼트 액션
@@ -176,15 +176,15 @@ chrome.find_element_by_id('ke_kbd_btn').send_keys(Keys.CONTROL + 'v')
 # 다른 방법
 from selenium.webdriver import ActionChains
 
-ActionChains(driver).key_down(Keys.CONTROL).send_keys('V').key_up(Keys.CONTROL).perform() 
-#위에서 driver 대신 엘리먼트를 입력해도 좋음.
+ActionChains(chrome).key_down(Keys.CONTROL).send_keys('V').key_up(Keys.CONTROL).perform() 
+#위에서 chrome 대신 엘리먼트를 입력해도 좋음.
 ```
 
 #### 3-4) 이동
 ```python
 # Frame 이동
 #이동할 프레임 엘리먼트 지정
-element = driver.find_element_by_tag_name('iframe')
+element = chrome.find_element_by_tag_name('iframe')
 
 #프레임 이동
 chrome.switch_to.frame(element)
@@ -200,9 +200,9 @@ chrome.switch_to.alert
 ## 경고창 수락 / 거절
 from selenium.webdriver.common.alert import Alert
 
-Alert(driver).accept()    #경고창 수락 누름
-Alert(driver).dismiss()   #경고창 거절 누름
-print(Alert(driver).text  # 경고창 텍스트 얻음
+Alert(chrome).accept()    #경고창 수락 누름
+Alert(chrome).dismiss()   #경고창 거절 누름
+print(Alert(chrome).text  # 경고창 텍스트 얻음
 ```
 #### 3-6) 쿠키
 ```python
