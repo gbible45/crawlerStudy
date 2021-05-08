@@ -73,7 +73,7 @@ print(paragraph_data.get_text())
 
 ```
 
-## selenium 기본 사용 법
+## selenium 사용 법
 ### 1) 라이브러리 import 방법 로컬
 #### 1-1) 주피터 노트북 OR 주피터 랩 사용시
 ```python
