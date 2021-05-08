@@ -151,9 +151,9 @@ chrome.find_element_by_tag_name('input')    #태그 이름으로 접근
 chrome.find_element_by_tag_name('input').find_element_by_tag_name('a')  #input 태그 하위태그인 a 태그에 접근
 
 # 단일
-driver.driver.find_element_by_~~~~~~~~
+chrome.driver.find_element_by_~~~~~~~~
 # 복수
-driver.driver.find_elements_~~~~~~~
+chrome.driver.find_elements_~~~~~~~
 ```
 
 #### 3-2) 엘레먼트 액션
@@ -165,13 +165,13 @@ chrome.find_element_by_id('ke_kbd_btn').click()
 chrome.find_element_by_id('ke_awd2_btn').send_keys('텍스트 입력')
 
 # 텍스트 삭제
-driver.find_element_by_id('ke_awd2_btn').clear()
+chrome.find_element_by_id('ke_awd2_btn').clear()
 ```
 #### 3-3) 단축키 입력 방법
 ```python
 from selenium.webdriver.common.keys import Keys
 # 컨트롤+V
-driver.find_element_by_id('ke_kbd_btn').send_keys(Keys.CONTROL + 'v')
+chrome.find_element_by_id('ke_kbd_btn').send_keys(Keys.CONTROL + 'v')
 
 # 다른 방법
 from selenium.webdriver import ActionChains
@@ -187,10 +187,10 @@ ActionChains(driver).key_down(Keys.CONTROL).send_keys('V').key_up(Keys.CONTROL).
 element = driver.find_element_by_tag_name('iframe')
 
 #프레임 이동
-driver.switch_to.frame(element)
+chrome.switch_to.frame(element)
 
 #프레임에서 빠져나오기
-driver.switch_to.default_content()
+chrome.switch_to.default_content()
 ```
 #### 3-5) 경고창 (alert) 처리
 ```python
