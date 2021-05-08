@@ -13,23 +13,17 @@
 - 왕초보를 위한 Python : https://wikidocs.net/book/2
 
 ## BeautifulSoup 사용법
+### 1) BeautifulSoup import
 ```python
 import requests
 from bs4 import BeautifulSoup
 ```
-### 1) reqeusts 라이브러리를 활용한 HTML 페이지 요청 
-#### 1-1) res 객체에 HTML 데이터가 저장되고, res.content로 데이터를 추출할 수 있음
+### 2) HTML 페이지 요청 및 파싱
 ```python
 res = requests.get('http://v.media.daum.net/v/20170615203441266')
 print(res.content)
-```
-
-### 2) HTML 페이지 파싱 BeautifulSoup(HTML데이터, 파싱방법)
-#### 2-1) BeautifulSoup 파싱방법
-```python
 soup = BeautifulSoup(res.content, 'html.parser')
 ```
-
 ### 3) 필요한 데이터 검색
 ```python
 title = soup.find('title')
