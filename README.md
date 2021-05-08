@@ -75,7 +75,7 @@ print(paragraph_data.get_text())
 
 ## selenium 기본 사용 법
 ### 1) 라이브러리 import 방법 로컬
-#### 1-1) 주피터 노트북 사용시
+#### 1-1) 주피터 노트북 OR 주피터 랩 사용시
 ```python
 try:
     from selenium import webdriver
@@ -121,6 +121,9 @@ options.add_argument('--disable-dev-shm-usage')
 ### 2) 브라우저 컨트롤
 #### 2-1) 브라우저 띄우기
 ```python
+# 주피터 노트북 OR 주피터 랩 사용시
+chrome = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+# 주피터 노트북 OR 주피터 랩 사용시
 chrome = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 ```
 
