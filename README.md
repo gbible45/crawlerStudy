@@ -24,13 +24,9 @@ res = requests.get('http://v.media.daum.net/v/20170615203441266')
 print(res.content)
 soup = BeautifulSoup(res.content, 'html.parser')
 ```
-### 3) 필요한 데이터 검색
+### 3) 필요한 데이터 검색 및 추출
 ```python
 title = soup.find('title')
-```
-
-### 4) 필요한 데이터 추출
-```python
 print(title.get_text())
 ```
 
