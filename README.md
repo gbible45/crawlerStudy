@@ -35,7 +35,7 @@ print(title.get_text())
 html = """
 <html>
     <body>
-        <h1 id='title'>타이틀 문구</h1>;
+        <h1 id='title'>타이틀 문구</h1>
         <p class='cssstyle'>웹페이지에서 필요한 데이터를 추출 내용</p>
         <p id='body' align='center'>
            여러줄 데이터내용
