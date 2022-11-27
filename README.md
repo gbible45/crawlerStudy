@@ -67,11 +67,15 @@ print(paragraph_data.get_text())
 ### 1) 라이브러리 import 방법 로컬
 #### 1-1) 주피터 사용시
 ```python
+# set options to be headless, ..
 try:
     from selenium import webdriver
 except:
     !pip install selenium
     from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 try:
     from webdriver_manager.chrome import ChromeDriverManager
@@ -99,7 +103,10 @@ if 'google.colab' in sys.modules:
 
 # set options to be headless, ..
 from selenium import webdriver
- 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 ### options 정의
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
@@ -132,39 +139,40 @@ chrome.forward() #앞으로가기
 ### 3) 엘레먼트 컨트롤
 #### 3-1) 엘레먼트 접근하는 방법
 ```python
-chrome.find_element_by_xpath('/html/body/div[2]/div[2]/div[1]/div/div[3]/form/fieldset/button/span[2]') #xpath 로 접근
-chrome.find_element_by_class_name('ico_search_submit')  #class 속성으로 접근
-chrome.find_element_by_id('ke_kbd_btn') #id 속성으로 접근
-chrome.find_element_by_link_text('회원가입')    #링크가 달려 있는 텍스트로 접근
-chrome.find_element_by_css_selector('#account > div > a')   #css 셀렉터로 접근
-chrome.find_element_by_name('join') #name 속성으로 접근
-chrome.find_element_by_partial_link_text('가입')  #링크가 달려 있는 엘레먼트에 텍스트 일부만 적어서 해당 엘레먼트에 접근
-chrome.find_element_by_tag_name('input')    #태그 이름으로 접근
+# sample 임 쿼리에 맞는 데이터가 있어야 작동
+chrome.find_element(By.XPATH, '/html/body/div[2]/div[2]/div[1]/div/div[3]/form/fieldset/button/span[2]') #xpath 로 접근
+chrome.find_element(By.CLASS_NAME, 'ico_search_submit')  #class 속성으로 접근
+chrome.find_element(By.ID, 'ke_kbd_btn') #id 속성으로 접근
+chrome.find_element(By.LINK_TEXT, '회원가입')    #링크가 달려 있는 텍스트로 접근
+chrome.find_element(By.CSS_SELECTOR, '#account > div > a')   #css 셀렉터로 접근
+chrome.find_element(By.NAME, 'join') #name 속성으로 접근
+chrome.find_element(By.PARTIAL_LINK_TEXT, '가입')  #링크가 달려 있는 엘레먼트에 텍스트 일부만 적어서 해당 엘레먼트에 접근
+chrome.find_element(By.TAG_NAME, 'input')    #태그 이름으로 접근
 
 chrome.find_element_by_tag_name('input').find_element_by_tag_name('a')  #input 태그 하위태그인 a 태그에 접근
 
 # 단일
-chrome.find_element_by_~~~~~~~~
+chrome.find_element(BY.~~~~~~~~, 'query')
 # 복수
-chrome.find_elements_~~~~~~~
+chrome.find_elements(BY.~~~~~~~, 'query')
 ```
 
 #### 3-2) 엘레먼트 액션
 ```python
 # 엘레먼트 클릭
-chrome.find_element_by_id('ke_kbd_btn').click()
+chrome.find_element(By.ID, 'ke_kbd_btn').click()
 
 # 텍스트 입력
-chrome.find_element_by_id('ke_awd2_btn').send_keys('텍스트 입력')
+chrome.find_element(By.ID, 'ke_awd2_btn').send_keys('텍스트 입력')
 
 # 텍스트 삭제
-chrome.find_element_by_id('ke_awd2_btn').clear()
+chrome.find_element(By.ID, 'ke_awd2_btn').clear()
 ```
 #### 3-3) 단축키 입력 방법
 ```python
 from selenium.webdriver.common.keys import Keys
 # 컨트롤+V
-chrome.find_element_by_id('ke_kbd_btn').send_keys(Keys.CONTROL + 'v')
+chrome.find_element(By.ID, 'ke_kbd_btn').send_keys(Keys.CONTROL + 'v')
 
 # 다른 방법
 from selenium.webdriver import ActionChains
@@ -177,7 +185,7 @@ ActionChains(chrome).key_down(Keys.CONTROL).send_keys('V').key_up(Keys.CONTROL).
 ```python
 # Frame 이동
 #이동할 프레임 엘리먼트 지정
-element = chrome.find_element_by_tag_name('iframe')
+element = chrome.find_element(By.TAG_NAME, 'iframe')
 
 #프레임 이동
 chrome.switch_to.frame(element)
